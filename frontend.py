@@ -25,7 +25,7 @@ if uploaded_file is not None:
                         uploaded_file.seek(0)
                         files = {"file": (uploaded_file.name, uploaded_file, "text/csv")}
 
-                        response = requests.post("http://localhost:8000/predict", files=files)
+                        response = requests.post("https://detectorbills.onrender.com", files=files)
 
                         if response.status_code != 200:
                             st.error(f"Erreur API : {response.status_code} - {response.text}")
